@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="{{ object.image.url }}" alt="Card image cap">
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ object.title }}</h5>
+                    <p class="card-text">Created By: {{ object.author }}</p>
+                    <p class="card-text">Desc: {{ object.desc }}</p>
+                    <p class="card-text">Price: ${{ object.price }}</p>
+                    <p class="card-text">Created at {{ object.created_at }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
