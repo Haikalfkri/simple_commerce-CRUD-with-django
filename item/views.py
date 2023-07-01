@@ -10,6 +10,7 @@ from django.contrib import messages
 
 
 # Create your views here.
+@login_required
 def dashboard(request):
     data = Item.objects.all()
     return render(request, 'dashboard.html', {"items":data})
@@ -26,7 +27,7 @@ class CreateItemView(LoginRequiredMixin, CreateView):
         return super(CreateItemView, self).form_valid(form)
 
 
-class ItemList(LoginRequiredMixin, ListView):
+class ItemList(ListView):
     model = Item
     template_name = "item_list.html"
     context_object_name = 'items'

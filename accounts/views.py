@@ -35,7 +35,7 @@ def signup(request):
     return render(request, "signup.html", {'form':form})
 
 
-@login_required()
+@login_required
 def user_logout(request):
     logout(request)
     return redirect("item:home")
